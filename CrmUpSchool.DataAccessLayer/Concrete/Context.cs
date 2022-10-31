@@ -15,6 +15,6 @@ namespace CrmUpSchool.DataAccessLayer.Concrete
             optionsBuilder.UseSqlServer("server=localhost; database=CRMCore; integrated security=true;");
         }
         public DbSet<Customer> Customers { get; set; }
-
+        public DbSet<Category> Categories { get; set; }
     }
 }
