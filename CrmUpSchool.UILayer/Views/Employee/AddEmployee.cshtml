@@ -20,8 +20,8 @@
     <input type="text" asp-for="EmployeeImage" class="form-control" />
     <span asp-validation-for="EmployeeImage" class="text-danger"></span>
     <br />
-    <label>Personel Kategori</label>
-    <input type="text" asp-for="CategoryID" class="form-control" />
+    <label>Personel Departman</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
     <span asp-validation-for="CategoryID" class="text-danger"></span>
     <br />
     <button class="btn btn-info">Kaydet</button>

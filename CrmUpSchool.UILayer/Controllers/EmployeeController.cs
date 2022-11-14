@@ -8,6 +8,7 @@ using CrmUpSchool.EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,10 +17,12 @@ namespace CrmUpSchool.UILayer.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
+        private readonly ICategoryService _categoryService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, ICategoryService categoryService)
         {
             _employeeService = employeeService;
+            _categoryService = categoryService;
         }
 
         // GET: /<controller>/
@@ -32,6 +35,13 @@ namespace CrmUpSchool.UILayer.Controllers
         [HttpGet]
         public IActionResult AddEmployee()
         {
+            List<SelectListItem> categoryValues = (from x in _categoryService.TGetList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,
+                                                       Value = x.CategoryId.ToString()
+                                                   }).ToList();
+            ViewBag.v = categoryValues;
             return View();
         }
 
@@ -84,7 +94,10 @@ namespace CrmUpSchool.UILayer.Controllers
         [HttpPost]
         public IActionResult UpdateEmployee(Employee employee)
         {
-
+            var values = _employeeService.TGetById(employee.EmployeeID);
+            employee.EmployeeStatus = values.EmployeeStatus;
+            _employeeService.TUpdate(employee);
+            return RedirectToAction("Index");
         }
     }
 }
