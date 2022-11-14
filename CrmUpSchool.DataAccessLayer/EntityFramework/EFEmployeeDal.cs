@@ -9,25 +9,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CrmUpSchool.DataAccessLayer.EntityFramework
 {
-	public class EFEmployeeDal:GenericRepository<Employee>, IEmployeeDal
-	{
-		public EFEmployeeDal()
-		{
-		}
+    public class EFEmployeeDal : GenericRepository<Employee>, IEmployeeDal
+    {
+        public EFEmployeeDal()
+        {
+        }
 
         public void ChangeEmployeeStatusToFalse(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Context())
+            {
+                var values = context.Employees.Find(id);
+                values.EmployeeStatus = false;
+                context.SaveChanges();
+            }
         }
 
         public void ChangeEmployeeStatusToTrue(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Context())
+            {
+                var values = context.Employees.Find(id);
+                values.EmployeeStatus = true;
+                context.SaveChanges();
+            }
         }
 
         public List<Employee> GetEmployeesByCategory()
         {
-          using (var context=new Context())
+            using (var context = new Context())
             {
                 //cagırmak istediğim entity
                 return context.Employees.Include(x => x.Category).ToList();

@@ -16,6 +16,16 @@ namespace CrmUpSchool.BusinessLayer.Concrete
             _employeeDal = employeeDal;
 		}
 
+        public void TChangeEmployeeStatusToFalse(int id)
+        {
+            _employeeDal.ChangeEmployeeStatusToFalse(id);
+        }
+
+        public void TChangeEmployeeStatusToTrue(int id)
+        {
+            _employeeDal.ChangeEmployeeStatusToTrue(id);
+        }
+
         public void TDelete(Employee t)
         {
             _employeeDal.Delete(t);

@@ -61,6 +61,31 @@ namespace CrmUpSchool.UILayer.Controllers
             _employeeService.TDelete(values);
             return RedirectToAction("Index");
         }
+
+        public IActionResult ChangeStatusToFalse(int id)
+        {
+            _employeeService.TChangeEmployeeStatusToFalse(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+            _employeeService.TChangeEmployeeStatusToTrue(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateEmployee(int id)
+        {
+            var values = _employeeService.TGetById(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateEmployee(Employee employee)
+        {
+
+        }
     }
 }
 
