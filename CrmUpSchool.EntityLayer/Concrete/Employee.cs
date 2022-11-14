@@ -21,6 +21,8 @@ namespace CrmUpSchool.EntityLayer.Concrete
 		//iliskili hale getirebilmek icin iliski icine almak istenen entity ismi getirilmeli
 		//ve Category tarafında da iliski belirtilmeli...
 		public Category Category { get; set; }
+
+		public bool EmployeeStatus { get; set; }
 	}
 }
 

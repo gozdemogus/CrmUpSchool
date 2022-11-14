@@ -12,6 +12,7 @@
         <th>Sil</th>
         <th>Düzenle</th>
         <th>Görevler</th>
+        <th>Durum</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -19,10 +20,23 @@
             <td>@item.EmployeeID</td>
             <td>@item.EmployeeName @item.EmployeeSurname</td>
             <td>@item.Category.CategoryName</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
             <td><a href="#" class="btn btn-outline-dark">Görevler</a></td>
+
+            @{
+                if (item.EmployeeStatus == true)
+                {
+                    <td><a href="#" class="btn btn-outline-warning">Pasif Yap</a></td>
+                }
+                else
+                {
+                    <td><a href="#" class="btn btn-outline-warning">Aktif Yap</a></td>
+
+                }
+            }
+
         </tr>
     }
 </table>
-<a href="#" class="btn btn-primary">New Personel</a>
+<a href="/Employee/AddEmployee/" class="btn btn-primary">New Personel</a>

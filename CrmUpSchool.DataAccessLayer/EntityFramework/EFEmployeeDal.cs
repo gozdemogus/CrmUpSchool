@@ -15,6 +15,16 @@ namespace CrmUpSchool.DataAccessLayer.EntityFramework
 		{
 		}
 
+        public void ChangeEmployeeStatusToFalse(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeEmployeeStatusToTrue(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Employee> GetEmployeesByCategory()
         {
           using (var context=new Context())
