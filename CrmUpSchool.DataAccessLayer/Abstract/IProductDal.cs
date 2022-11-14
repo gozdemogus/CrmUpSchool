@@ -9,5 +9,6 @@ namespace CrmUpSchool.DataAccessLayer.Abstract
 {
     public interface IProductDal:IGenericDal<Product>
     {
+        void GetProductByCategory();
     }
 }

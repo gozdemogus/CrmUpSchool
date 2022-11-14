@@ -1,0 +1,29 @@
+﻿@model List<CrmUpSchool.EntityLayer.Concrete.Category>
+@{
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td><a href="#" class="btn btn-warning">Durum</a></td>
+                <td><a href="#" class="btn btn-warning">Sil</a></td>
+                <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+
+
+
+
+</table>

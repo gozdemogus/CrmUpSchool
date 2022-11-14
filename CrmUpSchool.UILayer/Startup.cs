@@ -1,3 +1,7 @@
+using CrmUpSchool.BusinessLayer.Abstract;
+using CrmUpSchool.BusinessLayer.Concrete;
+using CrmUpSchool.DataAccessLayer.Abstract;
+using CrmUpSchool.DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +27,10 @@ namespace CrmUpSchool.UILayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //CategoryService gördüğün yerde CategoryManager'ı çağır
+            //Interface'ler ve miras alınan sınıfları tanımla
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryDal, EFCategoryDal>();
             services.AddControllersWithViews();
         }
 
