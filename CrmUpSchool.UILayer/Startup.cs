@@ -41,6 +41,10 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
             services.AddScoped<IEmployeeTaskDal, EFEmployeeTaskDal>();
 
+            services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
+            services.AddScoped<IEmployeeTaskDetailDal, EFEmployeeTaskDetailDal>();
+
+
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();

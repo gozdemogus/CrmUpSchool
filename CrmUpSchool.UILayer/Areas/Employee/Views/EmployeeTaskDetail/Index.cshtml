@@ -1,0 +1,21 @@
+﻿@model List<EmployeeTaskDetail>
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h1>Görev Detayları</h1>
+
+@if (Model.Count != 0)
+{
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>- @item.Description</tr>
+        }
+    </table>
+}
+else
+{
+    <h1>Henüz bir detay bulunmamaktadır.</h1>
+
+}
+

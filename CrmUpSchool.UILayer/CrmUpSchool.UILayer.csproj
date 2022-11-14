@@ -46,6 +46,7 @@
     <None Remove="Areas\Employee\Views\" />
     <None Remove="Areas\Employee\Views\Employee\" />
     <None Remove="Areas\Employee\Views\EmployeeTask\" />
+    <None Remove="Areas\Employee\Views\EmployeeTaskDetail\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -63,5 +64,6 @@
     <Folder Include="Areas\Employee\Views\" />
     <Folder Include="Areas\Employee\Views\Employee\" />
     <Folder Include="Areas\Employee\Views\EmployeeTask\" />
+    <Folder Include="Areas\Employee\Views\EmployeeTaskDetail\" />
   </ItemGroup>
 </Project>
