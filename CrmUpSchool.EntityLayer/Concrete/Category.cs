@@ -13,5 +13,8 @@ namespace CrmUpSchool.EntityLayer.Concrete
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
+
+        //List de olabilir
+        public ICollection<Employee> Employees { get; set; }
     }
 }

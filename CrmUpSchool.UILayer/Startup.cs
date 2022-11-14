@@ -31,6 +31,8 @@ namespace CrmUpSchool.UILayer
             //Interface'ler ve miras alınan sınıfları tanımla
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EFCategoryDal>();
+            services.AddScoped<IEmployeeService, EmployeeManager>();
+            services.AddScoped<IEmployeeDal, EFEmployeeDal>();
             services.AddControllersWithViews();
         }
 

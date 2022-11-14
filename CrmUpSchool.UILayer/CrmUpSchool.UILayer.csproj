@@ -26,8 +26,10 @@
 
   <ItemGroup>
     <None Remove="Views\Category\" />
+    <None Remove="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
+    <Folder Include="Views\Employee\" />
   </ItemGroup>
 </Project>
