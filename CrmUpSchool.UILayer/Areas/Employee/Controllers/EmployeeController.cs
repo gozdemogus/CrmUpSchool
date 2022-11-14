@@ -8,22 +8,25 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace CrmUpSchool.UILayer.Controllers
+namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
 {
-    public class UserController : Controller
+    [Area("Employee")]
+    public class EmployeeController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
 
-        public UserController(UserManager<AppUser> userManager)
+        public EmployeeController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var values = _userManager.Users.ToList();
-            return View(values);
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.v1 = values.Name;
+            ViewBag.v2 = values.Surname;
+            return View();
         }
     }
 }

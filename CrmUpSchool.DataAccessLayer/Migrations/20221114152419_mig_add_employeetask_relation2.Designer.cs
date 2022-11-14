@@ -4,14 +4,16 @@ using CrmUpSchool.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrmUpSchool.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221114152419_mig_add_employeetask_relation2")]
+    partial class mig_add_employeetask_relation2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,38 +201,12 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
-                {
-                    b.Property<int>("EmployeeTaskDetailID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EmployeeTaskID")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeeTaskDetailID");
-
-                    b.HasIndex("EmployeeTaskID");
-
-                    b.ToTable("EmployeeTaskDetails");
-                });
-
             modelBuilder.Entity("CrmUpSchool.UILayer.Models.EmployeeTask", b =>
                 {
                     b.Property<int>("EmployeeTaskID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -245,8 +221,6 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmployeeTaskID");
-
-                    b.HasIndex("AppUserId");
 
                     b.ToTable("EmployeeTasks");
                 });
@@ -363,28 +337,6 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
-                {
-                    b.HasOne("CrmUpSchool.UILayer.Models.EmployeeTask", "EmployeeTask")
-                        .WithMany("EmployeeTaskDetail")
-                        .HasForeignKey("EmployeeTaskID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EmployeeTask");
-                });
-
-            modelBuilder.Entity("CrmUpSchool.UILayer.Models.EmployeeTask", b =>
-                {
-                    b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppUser", "AppUser")
-                        .WithMany("EmployeeTasks")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppRole", null)
@@ -436,19 +388,9 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.AppUser", b =>
-                {
-                    b.Navigation("EmployeeTasks");
-                });
-
             modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("CrmUpSchool.UILayer.Models.EmployeeTask", b =>
-                {
-                    b.Navigation("EmployeeTaskDetail");
                 });
 #pragma warning restore 612, 618
         }

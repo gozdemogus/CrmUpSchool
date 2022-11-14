@@ -1,7 +1,10 @@
 using CrmUpSchool.BusinessLayer.Abstract;
 using CrmUpSchool.BusinessLayer.Concrete;
 using CrmUpSchool.DataAccessLayer.Abstract;
+using CrmUpSchool.DataAccessLayer.Concrete;
 using CrmUpSchool.DataAccessLayer.EntityFramework;
+using CrmUpSchool.EntityLayer.Concrete;
+using CrmUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,8 +34,15 @@ namespace CrmUpSchool.UILayer
             //Interface'ler ve miras alınan sınıfları tanımla
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EFCategoryDal>();
+
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<IEmployeeDal, EFEmployeeDal>();
+
+            services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
+            services.AddScoped<IEmployeeTaskDal, EFEmployeeTaskDal>();
+
+            services.AddDbContext<Context>();
+            services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
         }
 
@@ -52,6 +62,8 @@ namespace CrmUpSchool.UILayer
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -61,6 +73,14 @@ namespace CrmUpSchool.UILayer
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }

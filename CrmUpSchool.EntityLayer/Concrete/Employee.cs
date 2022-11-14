@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using CrmUpSchool.UILayer.Models;
 
 namespace CrmUpSchool.EntityLayer.Concrete
 {
@@ -23,6 +25,7 @@ namespace CrmUpSchool.EntityLayer.Concrete
 		public Category Category { get; set; }
 
 		public bool EmployeeStatus { get; set; }
-	}
+
+    }
 }
 

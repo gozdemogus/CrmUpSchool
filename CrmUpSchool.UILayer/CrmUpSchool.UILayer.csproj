@@ -34,10 +34,34 @@
     <None Remove="Microsoft.AspNetCore.Identity" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
     <None Remove="Views\User\" />
+    <None Remove="Views\Register\" />
+    <None Remove="Views\Login\" />
+    <None Remove="Views\Role\" />
+    <None Remove="Views\EmployeeTask\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Employee\" />
+    <None Remove="Areas\Employee\Controllers\" />
+    <None Remove="Areas\Employee\Data\" />
+    <None Remove="Areas\Employee\Models\" />
+    <None Remove="Areas\Employee\Views\" />
+    <None Remove="Areas\Employee\Views\Employee\" />
+    <None Remove="Areas\Employee\Views\EmployeeTask\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Employee\" />
     <Folder Include="Views\User\" />
+    <Folder Include="Views\Register\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Role\" />
+    <Folder Include="Views\EmployeeTask\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Employee\" />
+    <Folder Include="Areas\Employee\Controllers\" />
+    <Folder Include="Areas\Employee\Data\" />
+    <Folder Include="Areas\Employee\Models\" />
+    <Folder Include="Areas\Employee\Views\" />
+    <Folder Include="Areas\Employee\Views\Employee\" />
+    <Folder Include="Areas\Employee\Views\EmployeeTask\" />
   </ItemGroup>
 </Project>

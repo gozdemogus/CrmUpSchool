@@ -1,4 +1,5 @@
 ﻿using CrmUpSchool.EntityLayer.Concrete;
+using CrmUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,5 +19,7 @@ namespace CrmUpSchool.DataAccessLayer.Concrete
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeTask> EmployeeTasks { get; set; }
+        public DbSet<EmployeeTaskDetail> EmployeeTaskDetails { get; set; }
     }
 }
