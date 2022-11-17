@@ -1,0 +1,19 @@
+﻿@model Message
+
+
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <label>Receiver Mail</label>
+    <input type="text" asp-for="ReceiverEmail" class="form-control" />
+    <br />
+    <label>Subject</label>
+    <input type="text" asp-for="ReceiverEmail" class="form-control" />
+    <br />
+    <label>Message</label>
+    <textarea asp-for="MessageContext" id="w3review" name="w3review" rows="4" cols="50" class="form-control"></textarea>
+    <br />
+    <button class="btn btn-warning">Send</button>
+</form>
