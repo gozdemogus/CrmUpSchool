@@ -19,6 +19,8 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="MimeKit" Version="3.4.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +49,9 @@
     <None Remove="Areas\Employee\Views\Employee\" />
     <None Remove="Areas\Employee\Views\EmployeeTask\" />
     <None Remove="Areas\Employee\Views\EmployeeTaskDetail\" />
+    <None Remove="Areas\Employee\Views\Message\" />
+    <None Remove="NETCore.MailKit" />
+    <None Remove="MimeKit" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -65,5 +70,6 @@
     <Folder Include="Areas\Employee\Views\Employee\" />
     <Folder Include="Areas\Employee\Views\EmployeeTask\" />
     <Folder Include="Areas\Employee\Views\EmployeeTaskDetail\" />
+    <Folder Include="Areas\Employee\Views\Message\" />
   </ItemGroup>
 </Project>
