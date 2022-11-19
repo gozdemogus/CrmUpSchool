@@ -53,6 +53,15 @@
     <None Remove="NETCore.MailKit" />
     <None Remove="MimeKit" />
     <None Remove="Areas\Employee\Views\EmployeeProfile\" />
+    <None Remove="ViewComponents\" />
+    <None Remove="ViewComponents\Dashboard\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Areas\Employee\Views\Dashboard\" />
+    <None Remove="Views\Shared\Components\_HeadDashboardPartial\" />
+    <None Remove="Views\Shared\Components\_FeatureDashboardPartial\" />
+    <None Remove="Views\Shared\Components\_OverviewDashboardPartial\" />
+    <None Remove="Views\Shared\Components\_ChartDashboardPartial\" />
+    <None Remove="Areas\Employee\Views\Chart\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -73,5 +82,14 @@
     <Folder Include="Areas\Employee\Views\EmployeeTaskDetail\" />
     <Folder Include="Areas\Employee\Views\Message\" />
     <Folder Include="Areas\Employee\Views\EmployeeProfile\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="ViewComponents\Dashboard\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Areas\Employee\Views\Dashboard\" />
+    <Folder Include="Views\Shared\Components\_HeadDashboardPartial\" />
+    <Folder Include="Views\Shared\Components\_FeatureDashboardPartial\" />
+    <Folder Include="Views\Shared\Components\_OverviewDashboardPartial\" />
+    <Folder Include="Views\Shared\Components\_ChartDashboardPartial\" />
+    <Folder Include="Areas\Employee\Views\Chart\" />
   </ItemGroup>
 </Project>
