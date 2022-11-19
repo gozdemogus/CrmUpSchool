@@ -1,0 +1,31 @@
+﻿@model UserEditProfileViewModel
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<form method="post" class="form-group" enctype="multipart/form-data">
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+    <label>Email</label>
+    <input type="email" asp-for="Email" class="form-control" required />
+    <br />
+    <label>Telefon</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" required />
+    <br />
+    <label>Şifre</label>
+    <input type="password" asp-for="Password" class="form-control" required />
+    <br />
+    <label>Şifre Tekrar</label>
+    <input type="password" asp-for="ConfirmPassword" class="form-control" required />
+    <br />
+    <label>Resim</label>
+    <input type="file" asp-for="Image" class="form-control" required />
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>

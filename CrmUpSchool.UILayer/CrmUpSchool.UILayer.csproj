@@ -52,6 +52,7 @@
     <None Remove="Areas\Employee\Views\Message\" />
     <None Remove="NETCore.MailKit" />
     <None Remove="MimeKit" />
+    <None Remove="Areas\Employee\Views\EmployeeProfile\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -71,5 +72,6 @@
     <Folder Include="Areas\Employee\Views\EmployeeTask\" />
     <Folder Include="Areas\Employee\Views\EmployeeTaskDetail\" />
     <Folder Include="Areas\Employee\Views\Message\" />
+    <Folder Include="Areas\Employee\Views\EmployeeProfile\" />
   </ItemGroup>
 </Project>
