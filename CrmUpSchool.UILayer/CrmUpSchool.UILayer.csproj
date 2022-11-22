@@ -62,6 +62,7 @@
     <None Remove="Views\Shared\Components\_OverviewDashboardPartial\" />
     <None Remove="Views\Shared\Components\_ChartDashboardPartial\" />
     <None Remove="Areas\Employee\Views\Chart\" />
+    <None Remove="Views\Announcement\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -91,5 +92,6 @@
     <Folder Include="Views\Shared\Components\_OverviewDashboardPartial\" />
     <Folder Include="Views\Shared\Components\_ChartDashboardPartial\" />
     <Folder Include="Areas\Employee\Views\Chart\" />
+    <Folder Include="Views\Announcement\" />
   </ItemGroup>
 </Project>
