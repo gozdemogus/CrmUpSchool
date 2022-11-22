@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CrmUpSchool.BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [AllowAnonymous]
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _announcementService;
