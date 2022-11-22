@@ -21,6 +21,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
     <PackageReference Include="MimeKit" Version="3.4.2" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +65,9 @@
     <None Remove="Views\Shared\Components\_ChartDashboardPartial\" />
     <None Remove="Areas\Employee\Views\Chart\" />
     <None Remove="Views\Announcement\" />
+    <None Remove="EPPlus.Core" />
+    <None Remove="iTextSharp" />
+    <None Remove="Views\Report\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -93,5 +98,6 @@
     <Folder Include="Views\Shared\Components\_ChartDashboardPartial\" />
     <Folder Include="Areas\Employee\Views\Chart\" />
     <Folder Include="Views\Announcement\" />
+    <Folder Include="Views\Report\" />
   </ItemGroup>
 </Project>

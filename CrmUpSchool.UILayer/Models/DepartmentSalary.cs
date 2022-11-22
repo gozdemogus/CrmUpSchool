@@ -7,7 +7,7 @@ namespace CrmUpSchool.UILayer.Models
 		{
 		}
 
-        public string deparmantname { get; set; }
+        public string departmentname { get; set; }
         public int salaryavg { get; set; }
     }
 }

@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CrmUpSchool.UILayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
 {
+    [AllowAnonymous]
     [Area("Employee")]
     public class ChartController : Controller
     {
-        List<DepartmentSalary> departmentSalaries = new List<DepartmentSalary>();
+        
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -20,29 +22,32 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
             return View();
         }
 
+      
         public IActionResult DepartmentChart()
         {
+            List<DepartmentSalary> departmentSalaries = new List<DepartmentSalary>();
+
             departmentSalaries.Add(new DepartmentSalary
             {
-                deparmantname = "Muhasebe",
+                departmentname = "Muhasebe",
                 salaryavg = 10000
 
             });
 
             departmentSalaries.Add(new DepartmentSalary
             {
-                deparmantname = "IT",
+                departmentname = "IT",
                 salaryavg = 20000
 
             });
             departmentSalaries.Add(new DepartmentSalary
             {
-                deparmantname = "Satış",
+                departmentname = "Satış",
                 salaryavg = 12000
 
             });
 
-
+            var x = departmentSalaries;
             return Json(new { jsonList = departmentSalaries });
         }
     }

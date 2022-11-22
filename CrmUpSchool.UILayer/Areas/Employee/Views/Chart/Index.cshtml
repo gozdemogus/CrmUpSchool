@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+
 <script src="~/lib/jquery/dist/jquery.js"></script>
 
 <div class="row">
@@ -12,16 +13,19 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">google.charts.load('current', { 'packages': ['corechart'] });
+<script type="text/javascript" src="https://gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(DrawonLoad);
     function DrawonLoad() {
         $(function () {
             $.ajax({
                 type: 'GET',
-                url: '/Employee/Chart/DepartmentChart',
+                url: '/Employee/Chart/DepartmentChart/',
                 success: function (chartsdata) {
-                    var Data = chartsdata.jsonlist;
+                    console.log(chartsdata);
+                    var Data = chartsdata.jsonList;
+               
                     var data = new google.visualization.DataTable();
                     data.addColumn('string', 'departmentname');
                     data.addColumn('number', 'salaryavg');
