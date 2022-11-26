@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ClosedXML.Excel;
 using CrmUpSchool.DataAccessLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -59,6 +61,30 @@ namespace CrmUpSchool.UILayer.Controllers
 
         public IActionResult DynamicExcel()
         {
+            using (var workBook=new XLWorkbook())
+            {
+                var workSheet = workBook.Worksheets.Add("Müşteri Listesi");
+                workSheet.Cell(1, 1).Value = "Müşteri Adresi";
+                workSheet.Cell(1, 2).Value = "Müşteri Adı";
+                workSheet.Cell(1, 3).Value = "Müşteri Soyadı";
+                workSheet.Cell(1, 4).Value = "Müşteri Telefon";
+
+                int rowCount = 2;
+                foreach (var item in CustomerList())
+                {
+                    workSheet.Cell(rowCount, 1).Value = item.Mail;
+                    workSheet.Cell(rowCount, 2).Value = item.Name;
+                    workSheet.Cell(rowCount, 3).Value = item.Surname;
+                    workSheet.Cell(rowCount, 4).Value = item.Phone;
+                    rowCount++;
+                }
+                using (var stream= new MemoryStream())
+                {
+                    workBook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","musteri_listesi.xlsx");
+                }
+            }
             return View();
         }
     }

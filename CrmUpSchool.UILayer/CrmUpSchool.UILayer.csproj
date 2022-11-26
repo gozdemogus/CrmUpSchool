@@ -23,6 +23,7 @@
     <PackageReference Include="MimeKit" Version="3.4.2" />
     <PackageReference Include="EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="ClosedXML" Version="0.97.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +69,7 @@
     <None Remove="EPPlus.Core" />
     <None Remove="iTextSharp" />
     <None Remove="Views\Report\" />
+    <None Remove="ClosedXML" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
