@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using ClosedXML.Excel;
 using CrmUpSchool.DataAccessLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
@@ -86,6 +88,21 @@ namespace CrmUpSchool.UILayer.Controllers
                 }
             }
             return View();
+        }
+
+        public IActionResult StaticPdfReport()
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/PdfReports/" + "musteri.pdf");
+            var stream = new FileStream(path, FileMode.Create);
+
+            Document document = new Document(PageSize.A4);
+            PdfWriter.GetInstance(document, stream);
+            document.Open();
+            Paragraph paragraph = new Paragraph("Akbank");
+            document.Add(paragraph);
+            document.Close();
+
+            return File("/PdfReports/musteri.pdf", "application/pdf", "musteri.pdf");
         }
     }
 

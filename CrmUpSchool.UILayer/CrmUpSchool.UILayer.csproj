@@ -101,5 +101,9 @@
     <Folder Include="Areas\Employee\Views\Chart\" />
     <Folder Include="Views\Announcement\" />
     <Folder Include="Views\Report\" />
+    <Folder Include="wwwroot\PdfReports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\PdfReports\" />
   </ItemGroup>
 </Project>
