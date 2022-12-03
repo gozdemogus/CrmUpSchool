@@ -1,0 +1,12 @@
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/bin/Debug/net6.0/CrmUpSchool.DTOLayer.deps.json
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/bin/Debug/net6.0/CrmUpSchool.DTOLayer.dll
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/bin/Debug/net6.0/CrmUpSchool.DTOLayer.pdb
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.csproj.AssemblyReference.cache
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.AssemblyInfoInputs.cache
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.AssemblyInfo.cs
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.csproj.CoreCompileInputs.cache
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.dll
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/refint/CrmUpSchool.DTOLayer.dll
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/CrmUpSchool.DTOLayer.pdb
+/Users/gozdemogus/Desktop/CrmUpSchool.UILayer/CrmUpSchool.DTOLayer/obj/Debug/net6.0/ref/CrmUpSchool.DTOLayer.dll

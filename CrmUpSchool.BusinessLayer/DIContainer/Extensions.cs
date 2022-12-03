@@ -31,6 +31,10 @@ namespace CrmUpSchool.BusinessLayer.DIContainer
 
             services.AddScoped<IAnnouncementService, AnnouncementManager>();
             services.AddScoped<IAnnouncementDal, EFAnnouncementDal>();
+
+            services.AddScoped<ICustomerService, CustomerManager>();
+            services.AddScoped<ICustomerDal, EFCustomerDal>();
+
         }
 	}
 }

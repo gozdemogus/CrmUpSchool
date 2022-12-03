@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmUpSchool.BusinessLayer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmUpSchool.DataAccessLayer", "CrmUpSchool.DataAccessLayer\CrmUpSchool.DataAccessLayer.csproj", "{0584333F-F472-451D-B499-2949DAEE4C92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmUpSchool.DTOLayer", "CrmUpSchool.DTOLayer\CrmUpSchool.DTOLayer.csproj", "{8C6A7C6E-2A2B-45B9-AAB5-8880C936854E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0584333F-F472-451D-B499-2949DAEE4C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0584333F-F472-451D-B499-2949DAEE4C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0584333F-F472-451D-B499-2949DAEE4C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C6A7C6E-2A2B-45B9-AAB5-8880C936854E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6A7C6E-2A2B-45B9-AAB5-8880C936854E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6A7C6E-2A2B-45B9-AAB5-8880C936854E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6A7C6E-2A2B-45B9-AAB5-8880C936854E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

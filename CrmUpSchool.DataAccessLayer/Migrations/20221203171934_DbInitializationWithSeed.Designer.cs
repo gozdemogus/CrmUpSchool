@@ -4,14 +4,16 @@ using CrmUpSchool.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrmUpSchool.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221203171934_DbInitializationWithSeed")]
+    partial class DbInitializationWithSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +170,7 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
 
             modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Customer", b =>
                 {
-                    b.Property<string>("CustomerId")
+                    b.Property<string>("CustomerID")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CustomerMail")
@@ -183,7 +185,7 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
                     b.Property<string>("CustomerSurname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("CustomerID");
 
                     b.ToTable("Customers");
                 });

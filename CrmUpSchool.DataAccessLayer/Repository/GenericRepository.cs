@@ -23,7 +23,8 @@ namespace CrmUpSchool.DataAccessLayer.Repository
         {
             using (var context = new Context())
             {
-                return context.Set<T>().Find(id);
+                var newId = id.ToString();
+                return context.Set<T>().Find(newId);
 
             }
         }

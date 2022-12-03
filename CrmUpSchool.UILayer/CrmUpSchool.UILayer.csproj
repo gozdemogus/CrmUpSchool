@@ -70,6 +70,12 @@
     <None Remove="iTextSharp" />
     <None Remove="Views\Report\" />
     <None Remove="ClosedXML" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Models\" />
+    <None Remove="Areas\Admin\Views\" />
+    <None Remove="Areas\Admin\Views\AdminCustomer\" />
+    <None Remove="Areas\Admin\Views\Alert\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -102,6 +108,12 @@
     <Folder Include="Views\Announcement\" />
     <Folder Include="Views\Report\" />
     <Folder Include="wwwroot\PdfReports\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\AdminCustomer\" />
+    <Folder Include="Areas\Admin\Views\Alert\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\PdfReports\" />
