@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CrmUpSchool.DataAccessLayer\CrmUpSchool.DataAccessLayer.csproj" />
     <ProjectReference Include="..\CrmUpSchool.EntityLayer\CrmUpSchool.EntityLayer.csproj" />
+    <ProjectReference Include="..\CrmUpSchool.DTOLayer\CrmUpSchool.DTOLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +33,7 @@
     <Folder Include="ValidationRules\SupplierValidation\" />
     <Folder Include="ValidationRules\AppUserValidation\" />
     <Folder Include="ValidationRules\CustomerValidation\" />
+    <Folder Include="ValidationRules\ContactValidation\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,5 +41,6 @@
     <None Remove="ValidationRules\SupplierValidation\" />
     <None Remove="ValidationRules\AppUserValidation\" />
     <None Remove="ValidationRules\CustomerValidation\" />
+    <None Remove="ValidationRules\ContactValidation\" />
   </ItemGroup>
 </Project>

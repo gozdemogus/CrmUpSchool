@@ -9,17 +9,19 @@
   <ItemGroup>
     <None Remove="AutoMapper" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
-    <None Remove="SupplierDTOs\" />
-    <None Remove="AppUserDTOs\" />
-    <None Remove="CustomerDTOs\" />
+    <None Remove="DTOs\" />
+    <None Remove="DTOs\CustomerDTOs\" />
+    <None Remove="DTOs\AppUserDTOs\" />
+    <None Remove="DTOs\ContactDTOs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SupplierDTOs\" />
-    <Folder Include="AppUserDTOs\" />
-    <Folder Include="CustomerDTOs\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="DTOs\CustomerDTOs\" />
+    <Folder Include="DTOs\AppUserDTOs\" />
+    <Folder Include="DTOs\ContactDTOs\" />
   </ItemGroup>
 </Project>

@@ -24,5 +24,6 @@ namespace CrmUpSchool.DataAccessLayer.Concrete
         public DbSet<Message> Messages { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

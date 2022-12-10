@@ -1,9 +1,9 @@
 ﻿using System;
 namespace CrmUpSchool.DTOLayer.CustomerDTOs
 {
-	public class CustomerAddDTO
+	public class CustomerAddDto
 	{
-		public CustomerAddDTO()
+		public CustomerAddDto()
 		{
 		}
 	}
