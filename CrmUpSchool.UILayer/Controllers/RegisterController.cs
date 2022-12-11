@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using CrmUpSchool.EntityLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,7 +23,8 @@ namespace CrmUpSchool.UILayer.Controllers
             _userManager = userManager;  
         }
 
-        // GET: /<controller>/
+     
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -29,26 +32,11 @@ namespace CrmUpSchool.UILayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(AppUser appUser)
+        public async Task<IActionResult> Index(UserSignUpModel p)
         {
-            var result = await _userManager.CreateAsync(appUser,appUser.PasswordHash);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index","User");
-            }
+            Random rnd = new Random();
+            int number = rnd.Next(100000, 999999);
 
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult Index2()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Index2(UserSignUpModel p)
-        {
             if (ModelState.IsValid)
             {
                 AppUser appUser = new AppUser()
@@ -57,14 +45,16 @@ namespace CrmUpSchool.UILayer.Controllers
                     Name = p.Name,
                     Surname = p.Surname,
                     Email = p.Email,
-                    PhoneNumber = p.Phonenumber
+                    PhoneNumber = p.Phonenumber,
+                    MailCode = number.ToString()
                 };
                 if (p.Password == p.ConfirmPassword)
                 {
                     var result = await _userManager.CreateAsync(appUser, p.Password);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Login");
+                        SendMail(appUser.MailCode);
+                        return RedirectToAction("EmailConfirmed", "Register");
                     }
                     else
                     {
@@ -79,6 +69,54 @@ namespace CrmUpSchool.UILayer.Controllers
                     ModelState.AddModelError("", "şifreler uyuşmuyor");
                 }
             }
+            return View();
+        }
+
+
+        public void SendMail(string emailcode)
+        {
+            MimeMessage mimeMessage = new MimeMessage();
+
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "gozdemog@gmail.com");
+            mimeMessage.From.Add(mailboxAddressFrom);
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", "gozdemog@gmail.com");
+            mimeMessage.To.Add(mailboxAddressTo); 
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = emailcode;
+            mimeMessage.Body = bodyBuilder.ToMessageBody(); 
+
+            mimeMessage.Subject = "Üyelik Kaydı"; 
+
+            SmtpClient smtp = new SmtpClient(); 
+            smtp.Connect("smtp.gmail.com", 587, false);
+            smtp.Authenticate("gozdemog@gmail.com", ""); //kod
+            smtp.Send(mimeMessage);
+            smtp.Disconnect(true);
+        }
+
+
+        [HttpGet]
+        public IActionResult EmailConfirmed()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EmailConfirmed(AppUser appUser)
+        {
+            var user = await _userManager.FindByEmailAsync(appUser.Email);
+
+            if (user.MailCode == appUser.MailCode)
+            {
+                user.EmailConfirmed = true;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
     }

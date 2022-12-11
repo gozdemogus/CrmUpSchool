@@ -1,4 +1,4 @@
-﻿@model AppUser
+﻿@model UserSignUpModel
 
 @{
     Layout = null;
@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="~/MajesticAdmin/template/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/MajesticAdmin/template/images/favicon.png" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -39,28 +37,38 @@
                             <h6 class="font-weight-light">Hemen birkaç adımda üyeliğini tamamla</h6>
                             <form class="pt-3" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="username" placeholder="kullanıcı adınız" asp-for="UserName">
+                                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="kullanıcı adınız" asp-for="Username">
+                                    <span asp-validation-for="Username" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="adınız" asp-for="Name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" placeholder="soyadınız" asp-for="Surname">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" asp-for="Email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Telefon Numaranız" asp-for="PhoneNumber">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Telefon Numaranız" asp-for="Phonenumber">
+                                    <span asp-validation-for="Phonenumber" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz" asp-for="PasswordHash">
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz" asp-for="Password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz tekrar" asp-for="ConfirmPassword">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 </div>
                                 <div class="mb-4">
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input">
-                                            <a id="rules" href="#">Kuralları</a> okudum kabul ediyorum.
+                                            Kuralları okudum kabul ediyorum.
                                         </label>
                                     </div>
                                 </div>
@@ -70,6 +78,7 @@
                                 <div class="text-center mt-4 font-weight-light">
                                     Zaten bir hesabın var mı? <a href="/Login/Index/" class="text-primary">Giriş Yap</a>
                                 </div>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             </form>
                         </div>
                     </div>
@@ -87,17 +96,7 @@
     <script src="~/MajesticAdmin/template/js/off-canvas.js"></script>
     <script src="~/MajesticAdmin/template/js/hoverable-collapse.js"></script>
     <script src="~/MajesticAdmin/template/js/template.js"></script>
-   
     <!-- endinject -->
 </body>
 
 </html>
-
-<script>$('#rules').click(function () {
-    swal({
-        title: "Rule Definition",
-        text: "RulesRulesRules",
-        icon: "success",
-        button: "OK!",
-    });
-    });</script>
