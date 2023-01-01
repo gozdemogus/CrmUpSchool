@@ -1,8 +1,33 @@
 ﻿@using CrmUpSchool.EntityLayer.Concrete
 @model List<Customer>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
 }
-@foreach(var item in Model){
-    <p>@item.CustomerName @item.CustomerSurname</p>
-}
+
+
+<h2><i class="fas fa-users"></i> Customer List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.CustomerName</td>
+                <td>@item.CustomerSurname</td>
+                <td>@item.CustomerPhone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<a href="/Customer/Add/" class="btn btn-primary" style="width:200px">Yeni Müşteri</a>

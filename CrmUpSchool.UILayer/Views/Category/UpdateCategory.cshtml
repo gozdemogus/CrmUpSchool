@@ -1,0 +1,16 @@
+﻿@model Category
+
+
+<h1>Güncelle</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="CategoryId" />
+    <label>Kategori Ad</label>
+    <input type="text" asp-for="CategoryName" class="form-control" />
+    <br />
+    <label>Kategori Tanım</label>
+    <input type="text" asp-for="CategoryDescription" class="form-control" />
+    <br />
+    
+    <button class="btn btn-warning">Güncelle</button>
+</form>

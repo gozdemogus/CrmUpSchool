@@ -10,6 +10,7 @@ using CrmUpSchool.UILayer.Areas.Employee.Models;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,11 +22,13 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
     {
         private readonly IMessageService _messageService;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IConfiguration _configuration;
 
-        public MessageController(IMessageService messageService, UserManager<AppUser> userManager)
+        public MessageController(IMessageService messageService, UserManager<AppUser> userManager, IConfiguration configuration)
         {
             _messageService = messageService;
             _userManager = userManager;
+            _configuration = configuration;
         }
 
 
@@ -54,17 +57,19 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SendEMail()
+        public IActionResult SendEMail()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendEMail(MailRequest m)
+        public IActionResult SendEMail(MailRequest m)
         {
+            string mailKey = _configuration["MailKey"];
+
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailBoxAddressFrom = new MailboxAddress("Admin", "gozdemog@gmail.com");
+            MailboxAddress mailBoxAddressFrom = new MailboxAddress("Admin", "goezdem6@gmail.com");
             mimeMessage.From.Add(mailBoxAddressFrom);
 
             MailboxAddress mailBoxAddressTo = new MailboxAddress("User", m.ReceiverEmail);
@@ -77,7 +82,7 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
             mimeMessage.Subject = m.EmailSubject;
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("gozdemog@gmail.com", "sirijhxmwekgmmbe");
+            client.Authenticate("goezdem6@gmail.com", mailKey);
             client.Send(mimeMessage);
             client.Disconnect(true);
 

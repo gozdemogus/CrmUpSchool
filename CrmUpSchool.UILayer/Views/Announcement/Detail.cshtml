@@ -1,0 +1,25 @@
+﻿@model Announcement
+
+@{
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CRMLayout.cshtml";
+}
+
+<h2><i class="fas fa-sound"></i> Announcement Detail</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Date</th>
+    </tr>
+
+    <tr>
+        <td>@Model.AnnouncementID</td>
+        <td>@Model.Title</td>
+        <td>@Model.Content</td>
+        <td>@Model.Date</td>
+    </tr>
+</table>

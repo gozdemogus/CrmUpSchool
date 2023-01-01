@@ -24,7 +24,7 @@
             <td>@item.Status</td>
             <td>@item.Date.ToString("dd.MMM.yyyy")</td>
             <td><a href="/Employee/EmployeeTaskDetail/Index/@item.EmployeeTaskID" class="btn btn-outline-warning">Detaylar</a></td>
-            <td><a href="#" class="btn btn-outline-dark">Yeni İşlem</a></td>
+            <td><a href="/Employee/EmployeeTaskDetail/AddDetail/@item.EmployeeTaskID" class="btn btn-outline-dark">Yeni İşlem</a></td>
         </tr>
     }
 </table>

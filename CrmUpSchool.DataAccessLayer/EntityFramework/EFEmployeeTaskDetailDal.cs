@@ -16,7 +16,8 @@ namespace CrmUpSchool.DataAccessLayer.EntityFramework
         {
             using (var context = new Context())
             {
-                return context.EmployeeTaskDetails.Where(x => x.EmployeeTaskID == id).ToList();
+               var aaa = context.EmployeeTaskDetails.Where(x => x.EmployeeTaskID == id).ToList();
+                return aaa;
             }
         }
 

@@ -38,7 +38,7 @@ namespace CrmUpSchool.BusinessLayer.Concrete
 
         public void TInsert(EmployeeTaskDetail t)
         {
-            throw new NotImplementedException();
+            _employeeTaskDetailDal.Insert(t);
         }
 
         public void TUpdate(EmployeeTaskDetail t)

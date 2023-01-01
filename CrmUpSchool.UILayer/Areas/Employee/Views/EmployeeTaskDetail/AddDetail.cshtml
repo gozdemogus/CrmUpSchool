@@ -1,0 +1,17 @@
+﻿@model EmployeeTaskDetail
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h1>Add Detail</h1>
+<form class="form-group" method="post">
+    <label>Task Id</label>
+    <input type="text" value="@ViewBag.id" asp-for="EmployeeTaskID" class="form-control" readonly />
+    <br />
+
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <button class="btn btn-warning">Send</button>
+</form>
