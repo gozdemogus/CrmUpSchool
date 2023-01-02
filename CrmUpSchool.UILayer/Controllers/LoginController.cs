@@ -38,7 +38,9 @@ namespace CrmUpSchool.UILayer.Controllers
            // if (result.Succeeded && appUser.EmailConfirmed == true)
             if (result.Succeeded && confirmed == true)
             {
-                return RedirectToAction("Index", "User");
+                //  var url = Url.RouteUrl("areas", new { controller = "Employee", action = "Index", area = "Employee" });
+                //  return Redirect(url);
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

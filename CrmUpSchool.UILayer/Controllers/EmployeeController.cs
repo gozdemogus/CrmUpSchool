@@ -7,6 +7,7 @@ using CrmUpSchool.BusinessLayer.ValidationRules;
 using CrmUpSchool.EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;

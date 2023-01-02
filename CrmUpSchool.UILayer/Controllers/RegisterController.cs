@@ -21,11 +21,14 @@ namespace CrmUpSchool.UILayer.Controllers
         //buradaki Business katmanındaki Manager değil
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly RoleManager<AppRole> _roleManager;
 
-        public RegisterController(UserManager<AppUser> userManager, IConfiguration configuration)
+
+        public RegisterController(UserManager<AppUser> userManager, IConfiguration configuration, RoleManager<AppRole> roleManager)
         {
             _userManager = userManager;
             _configuration = configuration;
+             _roleManager = roleManager;
         }
 
      
@@ -120,7 +123,9 @@ namespace CrmUpSchool.UILayer.Controllers
                 user.EmailConfirmed = true;
 
                 var result = await _userManager.UpdateAsync(user);
-
+             
+                await _userManager.AddToRoleAsync(user,"Employee");
+                  
                 return RedirectToAction("Index", "Login");
             }
 
