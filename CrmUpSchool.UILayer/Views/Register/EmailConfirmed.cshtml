@@ -1,15 +1,14 @@
 ﻿@model AppUser
 
-@{ }
 
-<h1>EmailConfirmed</h1>
-<form method="post">
-
-    <label>E Mail</label>
-    <input type="text" asp-for="Email" class="form-control" />
-
-    <label>Confirm Code</label>
-    <input type="text" asp-for="MailCode" class="form-control" />
-
-    <button type="submit">Confirmed</button>
-</form>
+<h4>Mail Onaylama</h4>
+<br />
+<div style="display: flex; justify-content: center; width: 40%;">
+    <form method="post">
+        <input type="text" placeholder="Mail" asp-for="Email" class="form-control" />
+        <br />
+        <input type="text" placeholder="Onay Kodu" asp-for="MailCode" class="form-control" />
+        <br />
+        <button class="btn btn-outline-info">Onayla</button>
+    </form>
+</div>

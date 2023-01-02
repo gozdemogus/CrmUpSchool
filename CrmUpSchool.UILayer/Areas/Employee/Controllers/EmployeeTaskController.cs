@@ -33,6 +33,16 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
             return View(taskList);
         }
 
+
+        public async Task<IActionResult> EmployeeTaskListById(int id)
+        {
+            
+            var values = await _userManager.FindByIdAsync(id.ToString());
+            var taskList = _employeeTaskService.TGetEmployeeTaskById(id);
+            ViewBag.UserName = values.UserName;
+            return View(taskList);
+        }
+
     }
 
 

@@ -11,7 +11,7 @@
         <th>Departman</th>
         <th>Sil</th>
         <th>Düzenle</th>
-        <th>Görevler</th>
+        @*<th>Görevler</th>*@
         <th>Durum</th>
     </tr>
     @foreach (var item in Model)
@@ -22,7 +22,8 @@
             <td>@item.Category.CategoryName</td>
             <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Employee/UpdateEmployee/@item.EmployeeID" class="btn btn-outline-success">Güncelle</a></td>
-            <td><a href="#" class="btn btn-outline-dark">Görevler</a></td>
+            @*<td><a href="/Employee/EmployeeTask/EmployeeTaskListById/@item.EmployeeID" class="btn btn-outline-dark">Görevler</a></td>*@
+
 
             @{
                 if (item.EmployeeStatus == true)

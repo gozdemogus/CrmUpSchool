@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 namespace CrmUpSchool.UILayer.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class AdminCustomerController : Controller
     {
         private readonly ICustomerService _customerService;

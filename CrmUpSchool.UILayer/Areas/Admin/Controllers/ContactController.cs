@@ -14,7 +14,7 @@ namespace CrmUpSchool.UILayer.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
 

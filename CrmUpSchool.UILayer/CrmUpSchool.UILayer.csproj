@@ -82,6 +82,8 @@
     <None Remove="Mapping\" />
     <None Remove="Mapping\AutoMappingProfile\" />
     <None Remove="Areas\Admin\Views\Contact\" />
+    <None Remove="Views\Shared\Components\UserHeader\" />
+    <None Remove="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -123,6 +125,8 @@
     <Folder Include="Mapping\" />
     <Folder Include="Mapping\AutoMappingProfile\" />
     <Folder Include="Areas\Admin\Views\Contact\" />
+    <Folder Include="Views\Shared\Components\UserHeader\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\PdfReports\" />

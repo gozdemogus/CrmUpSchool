@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="~/MajesticAdmin/template/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/MajesticAdmin/template/images/favicon.png" />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
 </head>
 
 <body>
@@ -68,7 +71,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input">
-                                            Kuralları okudum kabul ediyorum.
+                                            <a href="#" id="btn1">Kuralları</a> okudum kabul ediyorum.
                                         </label>
                                     </div>
                                 </div>
@@ -99,4 +102,12 @@
     <!-- endinject -->
 </body>
 
+
 </html>
+
+<script>$("#btn1").click(function () {
+    swal("Kisisel verileriniz paylasılacaktır");
+    })
+    $("#btn2").click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    })</script>

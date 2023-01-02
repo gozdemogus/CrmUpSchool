@@ -16,7 +16,7 @@ using OfficeOpenXml;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Manager")]
     public class ReportController : Controller
     {
         public IActionResult ReportList()

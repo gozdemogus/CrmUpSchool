@@ -28,7 +28,7 @@ namespace CrmUpSchool.BusinessLayer.Concrete
 
         public EmployeeTask TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _employeeTaskDal.GetById(id);
         }
 
         public List<EmployeeTask> TGetList()
@@ -43,7 +43,7 @@ namespace CrmUpSchool.BusinessLayer.Concrete
 
         public void TUpdate(EmployeeTask t)
         {
-            throw new NotImplementedException();
+            _employeeTaskDal.Update(t);
         }
 
         public List<EmployeeTask> TGetEmployeeTaskById(int id)

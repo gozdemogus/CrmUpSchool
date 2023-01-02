@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Manager")]
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _announcementService;

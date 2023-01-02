@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CrmUpSchool.BusinessLayer.Abstract;
 using CrmUpSchool.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

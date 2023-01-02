@@ -23,10 +23,10 @@
             <td>@item.Name @item.Surname</td>
             <td>@item.Email</td>
         @*  <td>@item.Gender</td>*@
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
-            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+            <td><a href="/User/DeleteById/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/User/Update/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/User/Detail/@item.Id" class="btn btn-outline-dark">Detaylar</a></td>
         </tr>
     }
 </table>
-<a href="/Register/Index/" class="btn btn-primary me-2">Yeni Üye Kaydı</a>
+<a href="/Register/Index/" class="btn btn-primary me-2" style="width:200px">Yeni Üye Kaydı</a>

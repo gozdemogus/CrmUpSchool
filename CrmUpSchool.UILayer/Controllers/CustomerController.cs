@@ -1,11 +1,13 @@
 ﻿using CrmUpSchool.BusinessLayer.Abstract;
 using CrmUpSchool.DataAccessLayer.Concrete;
 using CrmUpSchool.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;

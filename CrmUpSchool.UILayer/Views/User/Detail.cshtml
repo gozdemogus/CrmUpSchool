@@ -1,0 +1,28 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CRMLayout.cshtml";
+}
+
+<form method="post" class="form-group" enctype="multipart/form-data">
+    <img src="@Model.ImageURL" style="border-radius: 50%; width: 100px; height: 100px; " />
+    <br />
+    <br />
+    <input type="text" asp-for="UserName" class="form-control" readonly />
+    <br />
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control" readonly />
+    <br />
+    <label>Soyad</label>
+    <input type="text" asp-for="Surname" class="form-control" readonly />
+    <br />
+    <label>Email</label>
+    <input type="email" asp-for="Email" class="form-control" readonly />
+    <br />
+    <label>Telefon</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" readonly />
+    <br />
+</form>
+
+<a href="/User/Index/" class="btn btn-success" style="width:200px">Go Back</a>

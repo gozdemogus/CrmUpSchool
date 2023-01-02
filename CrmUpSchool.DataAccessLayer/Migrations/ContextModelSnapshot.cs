@@ -198,8 +198,10 @@ namespace CrmUpSchool.DataAccessLayer.Migrations
 
             modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Customer", b =>
                 {
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CustomerMail")
                         .HasColumnType("nvarchar(max)");

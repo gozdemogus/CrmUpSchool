@@ -13,7 +13,7 @@ namespace CrmUpSchool.UILayer.Areas.Admin.Controllers
     {
         // GET: /<controller>/
         [Area("Admin")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View();

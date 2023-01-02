@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,13 +38,17 @@ namespace CrmUpSchool.UILayer
 
             services.ContainerDependencies();
             services.AddDbContext<Context>();
-            services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AppUser, AppRole>()
+                .AddErrorDescriber<CustomIdentityValidator>()
+                .AddEntityFrameworkStores<Context>()
+                .AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider);
 
             services.AddAutoMapper(typeof(Startup));
 
             services.CustomizeValidator();
 
             services.AddControllersWithViews().AddFluentValidation();
+
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -54,6 +59,8 @@ namespace CrmUpSchool.UILayer
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Login/Index";
+                options.AccessDeniedPath = "/Error/Index";
+
             });
         }
 
@@ -78,6 +85,7 @@ namespace CrmUpSchool.UILayer
             app.UseRouting();
 
             app.UseAuthorization();
+        
 
             app.UseEndpoints(endpoints =>
             {
@@ -93,6 +101,9 @@ namespace CrmUpSchool.UILayer
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
             });
+
+          
+
         }
     }
 }

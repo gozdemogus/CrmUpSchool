@@ -54,6 +54,40 @@ namespace CrmUpSchool.UILayer.Controllers
             _employeeTaskService.TInsert(employeeTask);
             return RedirectToAction("Index");
         }
+
+
+        public IActionResult Delete(int id)
+        {
+            var task = _employeeTaskService.TGetById(id);
+           _employeeTaskService.TDelete(task);
+            return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            List<SelectListItem> userValues = (from x in _userManager.Users.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name + " " + x.Surname,
+                                                   Value = x.Id.ToString()
+                                               }).ToList();
+            ViewBag.v = userValues;
+            var task = _employeeTaskService.TGetById(id);
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Update(EmployeeTask employeeTask)
+        {
+            var taskTarget = _employeeTaskService.TGetById(employeeTask.EmployeeTaskID);
+    
+            taskTarget.Title = employeeTask.Title;
+            taskTarget.Date = employeeTask.Date;
+            taskTarget.Details = employeeTask.Details;
+            _employeeTaskService.TUpdate(taskTarget);
+            return RedirectToAction("Index");
+        }
     }
 }
 

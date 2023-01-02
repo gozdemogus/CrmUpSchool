@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CrmUpSchool.UILayer.Controllers
 {
 
-    [AllowAnonymous]
+   [Authorize(Roles = "Manager")]
     public class RoleController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
