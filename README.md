@@ -28,7 +28,7 @@ When a new user registered, an approval code send to the provided e-mail address
 
 # Views
 ## Employee
-<img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211016843-b275ee78-fa07-45b5-b3c0-b62046fb131d.png">
+<img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211023317-5faf8b81-10f9-4fb2-b31d-c35befa6c8c6.png">
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211018669-e60d5c0e-31d5-48dd-8c34-a86a06a35170.png">
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211018707-4baa4bd9-e080-4d75-8c3c-341dd665e26d.png">
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211018817-31112259-509b-4658-909c-8d32cbba2a0a.png">
