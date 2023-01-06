@@ -43,4 +43,13 @@ When a new user registered, an approval code send to the provided e-mail address
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211017310-5bb45928-9eec-42db-a171-c97290ed3deb.png">
 :point_down:	Manager can assign different roles to users.
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211017570-b11a70e2-54c3-4bd3-9151-26cb76304929.png">
-##
+
+## Acces Denied
+Roles are assigned to the pages. So, when a user whose role is not suitable for accessing that page requests access, they encounter Access Denied
+<img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211023052-e6165c58-15cb-464f-9c06-f934b80653d3.png">
+
+# Contact
+
+Gözdem Oğuş - [@Linkedin](https://www.linkedin.com/in/gozdemogus/) 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
