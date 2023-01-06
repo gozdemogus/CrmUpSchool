@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrmUpSchool.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230102122033_mig1")]
+    [Migration("20230106132450_mig1")]
     partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
