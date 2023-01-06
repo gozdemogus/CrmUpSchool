@@ -45,7 +45,7 @@ When a new user registered, an approval code send to the provided e-mail address
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211017570-b11a70e2-54c3-4bd3-9151-26cb76304929.png">
 
 ## Acces Denied
-Roles are assigned to the pages. So, when a user whose role is not suitable for accessing that page requests access, they encounter Access Denied
+Roles are assigned to the pages. So, when a user whose role is not suitable for accessing that page requests access, user encounters the Access Denied page.
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/107196935/211023052-e6165c58-15cb-464f-9c06-f934b80653d3.png">
 
 # Contact
