@@ -16,7 +16,8 @@ using OfficeOpenXml;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    //[Area("Admin")]
+     [Authorize(Roles = "Admin")]
     public class ReportController : Controller
     {
         public IActionResult ReportList()
@@ -98,8 +99,108 @@ namespace CrmUpSchool.UILayer.Controllers
             Document document = new Document(PageSize.A4);
             PdfWriter.GetInstance(document, stream);
             document.Open();
-            Paragraph paragraph = new Paragraph("Akbank");
-            document.Add(paragraph);
+
+            //string imagePath = "https://avatars.githubusercontent.com/u/107196935?v=4";
+            //Image image = Image.GetInstance(imagePath);
+            //image.ScaleAbsolute(100, 100); // width and height in user unit
+            //image.SetAbsolutePosition(70, 700);
+            //document.Add(image);
+
+            //Paragraph paragraph = new Paragraph("Akbank");
+            //document.Add(paragraph);
+
+            //Paragraph header = new Paragraph("My PDF Document");
+            //header.Font = FontFactory.GetFont(FontFactory.HELVETICA, 18, Font.BOLD);
+            //document.Add(header);
+
+            //Paragraph coloredText = new Paragraph("This text is red.");
+            //coloredText.Font.Color = BaseColor.RED;
+            //document.Add(coloredText);
+
+            // Add personal information
+            Paragraph name = new Paragraph("John Doe");
+            name.Alignment = Element.ALIGN_LEFT;
+            name.Font = FontFactory.GetFont(FontFactory.HELVETICA, 24, Font.BOLD);
+            document.Add(name);
+
+            Paragraph address = new Paragraph("123 Main St, Anytown USA 12345");
+            address.Alignment = Element.ALIGN_LEFT;
+            address.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+            document.Add(address);
+
+            Paragraph phone = new Paragraph("(555) 555-5555");
+            phone.Alignment = Element.ALIGN_LEFT;
+            phone.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+            document.Add(phone);
+
+            Paragraph email = new Paragraph("johndoe@email.com");
+            email.Alignment = Element.ALIGN_LEFT;
+            email.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+            document.Add(email);
+
+            document.Add(new Paragraph("\n")); //add empty line 
+
+            // Add a section header
+            Paragraph summaryHeader = new Paragraph("Summary");
+            summaryHeader.Alignment = Element.ALIGN_LEFT;
+            summaryHeader.Font.Color = BaseColor.BLUE;
+            summaryHeader.Font = FontFactory.GetFont(FontFactory.HELVETICA, 18, Font.BOLD);
+            document.Add(summaryHeader);
+
+            // Add summary text
+            Paragraph summary = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna a feugiat placerat, ipsum risus accumsan augue, et malesuada nibh orci id quam. Sed rutrum, ipsum at malesuada dictum, ipsum velit aliquam velit, id aliquam turpis nulla vel nisl.");
+            document.Add(summary);
+
+            //Add  a photo
+            string photoPath = "https://avatars.githubusercontent.com/u/107196935?v=4";
+            Image photo = Image.GetInstance(photoPath);
+            photo.ScaleToFit(100f, 150f);
+            photo.SetAbsolutePosition(450f, 750f);
+            document.Add(photo);
+
+            document.Add(new Paragraph("\n")); //add empty line 
+
+            Paragraph experienceHeader = new Paragraph("Experience");
+            experienceHeader.Alignment = Element.ALIGN_LEFT;
+            experienceHeader.Font.Color = BaseColor.BLUE;
+            experienceHeader.Font = FontFactory.GetFont(FontFactory.HELVETICA, 18, Font.BOLD);
+            document.Add(experienceHeader);
+
+            // Add job experience
+            Paragraph jobTitle = new Paragraph("Job Title - Company Name");
+            jobTitle.Alignment = Element.ALIGN_LEFT;
+            jobTitle.Font = FontFactory.GetFont(FontFactory.HELVETICA, 14, Font.BOLD);
+            document.Add(jobTitle);
+
+            Paragraph jobDates = new Paragraph("January 2020 - Present");
+            jobDates.Alignment = Element.ALIGN_LEFT;
+            jobDates.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+            document.Add(jobDates);
+
+            Paragraph jobDescription = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna a feugiat placerat, ipsum risus accumsan augue, et malesuada nibh orci id quam. Sed rutrum, ipsum at malesuada dictum, ipsum velit aliquam velit, id aliquam turpis nulla vel nisl.");
+            document.Add(jobDescription);
+
+            document.Add(new Paragraph("\n")); //add empty line 
+
+            // Add a section header
+            Paragraph educationHeader = new Paragraph("Education");
+            educationHeader.Alignment = Element.ALIGN_LEFT;
+            educationHeader.Font.Color = BaseColor.BLUE;
+            educationHeader.Font = FontFactory.GetFont(FontFactory.HELVETICA, 18, Font.BOLD);
+            document.Add(educationHeader);
+
+            // Add education
+            Paragraph degree = new Paragraph("Bachelor of Science in Computer Science - University Name");
+            degree.Alignment = Element.ALIGN_LEFT;
+            degree.Font = FontFactory.GetFont(FontFactory.HELVETICA, 14, Font.BOLD);
+            document.Add(degree);
+
+            Paragraph graduationDate = new Paragraph("May 2018");
+            graduationDate.Alignment = Element.ALIGN_LEFT;
+            graduationDate.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+            document.Add(graduationDate);
+       
+
             document.Close();
 
             return File("/PdfReports/musteri.pdf", "application/pdf", "musteri.pdf");

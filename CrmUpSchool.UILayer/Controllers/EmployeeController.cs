@@ -28,6 +28,7 @@ namespace CrmUpSchool.UILayer.Controllers
         }
 
         // GET: /<controller>/
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var values = _employeeService.TGetEmployeesByCategory();
