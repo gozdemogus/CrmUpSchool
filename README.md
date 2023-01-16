@@ -12,6 +12,8 @@ Project contains 3 main modules. Manager, Admin and Employee. Each one of them i
 - Ajax & jQuery
 - HTML, CSS, Bootstrap
 - Mailkit
+- Fluent Validation
+- AutoMapper
 
 ## Login - Register - Forgot Password Fields
 
