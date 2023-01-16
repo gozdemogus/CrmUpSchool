@@ -9,6 +9,7 @@ Project contains 3 main modules. Manager, Admin and Employee. Each one of them i
 - N Tier Architecture
 - Entity Framework
 - Repository Design Pattern
+- Identity Framework
 - Ajax & jQuery
 - HTML, CSS, Bootstrap
 - Mailkit
